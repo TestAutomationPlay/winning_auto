@@ -1,0 +1,19 @@
+{
+  "name": "cypress-winning-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "cypress:run": "cypress run --browser chrome",
+    "cypress:test": "cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "typescript"
+  ],
+  "author": "Winning Project",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "12.17.4",
+    "typescript": "^5.2.2"
+  }
+}
