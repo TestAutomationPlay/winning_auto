@@ -12,6 +12,7 @@ export class pageProps{
     static productSearchResult:string = 'ol.products.list.items.product-items'
     static searchAutoComplete:string = '#search_autocomplete'
 
+   //  Based on the color selector is defined here, the same way it be enhanced with size as well
     static prodcutColor(selectedColor:string):string {
         let prodcutColorValue:number = 0
        switch(selectedColor){

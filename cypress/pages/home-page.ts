@@ -80,13 +80,23 @@ export class HomePage {
 
     verifyPageLoaded(){
         // Intercept network requests
-        cy.intercept('GET', 'https://magento.softwaretestingboard.com/').as('apiRequests');
+        cy.intercept('GET', '**/*').as('pageLoadRequst');
         
          // Visit the page
          cy.visit('/');
 
         // Wait for the network requests to be completed
-        cy.wait('@apiRequests')
+        cy.wait('@pageLoadRequst').then((interception) => {
+            
+            // Access the intercepted response
+            const response = interception.response;
+    
+            if(response){
+                // assert the status code and the body message stubbed
+                expect(response.statusCode).to.equal(200);
+                }
+               
+              });
 
         // assertions to ensure the page is completely loaded succesfully
         cy.get('.content-heading').should('exist');
